@@ -16,6 +16,7 @@
 		8BCCC5ED24E49B3D006497F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BCCC5EB24E49B3D006497F9 /* LaunchScreen.storyboard */; };
 		8BCCC5F824E49B3E006497F9 /* eye_detectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCCC5F724E49B3E006497F9 /* eye_detectorTests.swift */; };
 		8BCCC60324E49B3E006497F9 /* eye_detectorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCCC60224E49B3E006497F9 /* eye_detectorUITests.swift */; };
+		8BF5BF7224F72E990046F434 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5BF7124F72E990046F434 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		8BCCC5FE24E49B3E006497F9 /* eye-detectorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "eye-detectorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BCCC60224E49B3E006497F9 /* eye_detectorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eye_detectorUITests.swift; sourceTree = "<group>"; };
 		8BCCC60424E49B3E006497F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BF5BF7124F72E990046F434 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				8BCCC5EE24E49B3D006497F9 /* Info.plist */,
 				8BCCC5E124E49B3A006497F9 /* eye_detector.xcdatamodeld */,
 				8BCCC5E824E49B3D006497F9 /* Preview Content */,
+				8BF5BF7124F72E990046F434 /* ImagePicker.swift */,
 			);
 			path = "eye-detector";
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			files = (
 				8BCCC5E324E49B3A006497F9 /* eye_detector.xcdatamodeld in Sources */,
 				8BCCC5DE24E49B3A006497F9 /* AppDelegate.swift in Sources */,
+				8BF5BF7224F72E990046F434 /* ImagePicker.swift in Sources */,
 				8BCCC5E524E49B3A006497F9 /* ContentView.swift in Sources */,
 				8BCCC5E024E49B3A006497F9 /* SceneDelegate.swift in Sources */,
 			);

@@ -9,12 +9,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    
+
     @State private var showSheet: Bool = false
-    @State var imagePicker: Bool = false
-    @State var show = false
-    @State var source: UIImagePickerController.SourceType = .photoLibrary
+    @State private var showImagePicker: Bool = false
+    @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
+    
+    @State private var imageData: UIImage?
     
     var body: some View {
         NavigationView {
@@ -22,11 +22,24 @@ struct ContentView: View {
                 
                 Image("placeholder")
                 
-                Button("Choose Picture") {
+                Button("Open Camera") {
                     self.showSheet = true
-                }.padding()
+                    }.padding().background(Color.black).cornerRadius(10)
+                    .actionSheet(isPresented: $showSheet) {
+                        ActionSheet(title: Text("Select Photo"),
+                                    message: Text("Choose"), buttons: [
+                                        .default(Text("Photo Lib")){
+                                            self.showImagePicker = true
+                                            self.sourceType = .photoLibrary
+                                        },.default(Text("Camera")) {
+                                            self.showImagePicker = true
+                                            self.sourceType = .camera
+                                        },.cancel()])
+                }
             }
-        .navigationBarTitle("Eye Detector App")
+            .navigationBarTitle("Eye Detector App")
+        }.sheet(isPresented: $showImagePicker) {
+            Text("Does this work....?")
         }
     }
 }
@@ -34,46 +47,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-struct ImagePicker: UIViewControllerRepresentable {
-    @Binding var show: Bool
-    @Binding var image: Data
-    var source: UIImagePickerController.SourceType
-    
-    func makeCoordinator() -> ImagePicker.Coordinator {
-        return ImagePicker.Coordinator(parent: self)
-    }
-    
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
-        
-    }
-    
-    func makeUIViewController(context: Context) -> UIImagePickerController {
-        let controller = UIImagePickerController()
-        controller.sourceType = source
-        controller.delegate = context.coordinator
-        return controller
-    }
-    
-    class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-        var parent: ImagePicker
-        
-        init(parent: ImagePicker) {
-            self.parent = parent
-        }
-        
-        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            self.parent.show.toggle()
-        }
-        
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            
-            let image = info[.originalImage] as! UIImage
-            let data = image.pngData()
-            self.parent.image = data!
-            self.parent.show.toggle()
-        }
     }
 }
