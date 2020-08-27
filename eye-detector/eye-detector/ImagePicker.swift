@@ -15,6 +15,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     typealias Coordinator = ImagePickerCoodinator
     
     @Binding var image: UIImage?
+    @Binding var isShown: Bool
     var sourceType: UIImagePickerController.SourceType = .camera
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
@@ -22,6 +23,8 @@ struct ImagePicker: UIViewControllerRepresentable {
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = sourceType
         imagePickerController.delegate = context.coordinator
+        imagePickerController.cameraCaptureMode = .photo
+        imagePickerController.cameraDevice = .front
         return imagePickerController
     }
     
@@ -30,7 +33,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
     
     func makeCoordinator() -> ImagePicker.Coordinator {
-        return ImagePickerCoodinator(image: $image)
+        return ImagePickerCoodinator(image: $image, isShown: $isShown)
     }
     
 }
@@ -38,17 +41,23 @@ struct ImagePicker: UIViewControllerRepresentable {
 class ImagePickerCoodinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @Binding var image: UIImage?
+    @Binding var isShown:Bool
     
-    init(image: Binding<UIImage?>) {
+    init(image: Binding<UIImage?>, isShown: Binding<Bool>) {
         _image = image
+        _isShown = isShown
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let uiImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             image = uiImage
+            isShown = false
         }
-        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        isShown = false
     }
 }
 

@@ -20,7 +20,8 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 
-                Image("placeholder")
+                Image("Temp Image")
+            
                 
                 Button("Open Camera") {
                     self.showSheet = true
@@ -39,7 +40,7 @@ struct ContentView: View {
             }
             .navigationBarTitle("Eye Detector App")
         }.sheet(isPresented: $showImagePicker) {
-            ImagePicker(image: self.$image, sourceType: self.sourceType)
+            ImagePicker(image: self.$image, isShown: self.$showImagePicker, sourceType: self.sourceType)
         }
     }
 }
