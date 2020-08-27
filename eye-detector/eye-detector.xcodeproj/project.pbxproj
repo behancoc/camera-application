@@ -444,6 +444,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"eye-detector/Preview Content\"";
+				DEVELOPMENT_TEAM = 5DHGTDN2X5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "eye-detector/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -463,6 +464,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"eye-detector/Preview Content\"";
+				DEVELOPMENT_TEAM = 5DHGTDN2X5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "eye-detector/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

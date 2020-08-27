@@ -14,7 +14,7 @@ struct ContentView: View {
     @State private var showImagePicker: Bool = false
     @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
     
-    @State private var imageData: UIImage?
+    @State private var image: UIImage?
     
     var body: some View {
         NavigationView {
@@ -39,7 +39,7 @@ struct ContentView: View {
             }
             .navigationBarTitle("Eye Detector App")
         }.sheet(isPresented: $showImagePicker) {
-            Text("Does this work....?")
+            ImagePicker(image: self.$image, sourceType: self.sourceType)
         }
     }
 }
