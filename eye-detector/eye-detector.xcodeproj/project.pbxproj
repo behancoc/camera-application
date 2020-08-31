@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52875586801B24F44E40584C /* Pods_eye_detector_eye_detectorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6720B215A4E153C71C004E0D /* Pods_eye_detector_eye_detectorUITests.framework */; };
 		8BCCC5DE24E49B3A006497F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCCC5DD24E49B3A006497F9 /* AppDelegate.swift */; };
 		8BCCC5E024E49B3A006497F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCCC5DF24E49B3A006497F9 /* SceneDelegate.swift */; };
 		8BCCC5E324E49B3A006497F9 /* eye_detector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BCCC5E124E49B3A006497F9 /* eye_detector.xcdatamodeld */; };
@@ -17,6 +18,8 @@
 		8BCCC5F824E49B3E006497F9 /* eye_detectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCCC5F724E49B3E006497F9 /* eye_detectorTests.swift */; };
 		8BCCC60324E49B3E006497F9 /* eye_detectorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCCC60224E49B3E006497F9 /* eye_detectorUITests.swift */; };
 		8BF5BF7224F72E990046F434 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5BF7124F72E990046F434 /* ImagePicker.swift */; };
+		C0598F19273ABED67DDE8510 /* Pods_eye_detector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13DB6147E4371D22809732FE /* Pods_eye_detector.framework */; };
+		C4E807ED55E3AAEEEBBD50F5 /* Pods_eye_detectorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C248339C860105A2E7A246E /* Pods_eye_detectorTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13DB6147E4371D22809732FE /* Pods_eye_detector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eye_detector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C248339C860105A2E7A246E /* Pods_eye_detectorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eye_detectorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		292DFFE4862FEFBDD439EF55 /* Pods-eye-detectorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eye-detectorTests.debug.xcconfig"; path = "Target Support Files/Pods-eye-detectorTests/Pods-eye-detectorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		29E449205C686C4BE06A69C5 /* Pods-eye-detector-eye-detectorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eye-detector-eye-detectorUITests.debug.xcconfig"; path = "Target Support Files/Pods-eye-detector-eye-detectorUITests/Pods-eye-detector-eye-detectorUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		65E5EA6365BF4D3D7ED6C79F /* Pods-eye-detector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eye-detector.debug.xcconfig"; path = "Target Support Files/Pods-eye-detector/Pods-eye-detector.debug.xcconfig"; sourceTree = "<group>"; };
+		6720B215A4E153C71C004E0D /* Pods_eye_detector_eye_detectorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eye_detector_eye_detectorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BCCC5DA24E49B3A006497F9 /* eye-detector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eye-detector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BCCC5DD24E49B3A006497F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BCCC5DF24E49B3A006497F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +62,9 @@
 		8BCCC60224E49B3E006497F9 /* eye_detectorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eye_detectorUITests.swift; sourceTree = "<group>"; };
 		8BCCC60424E49B3E006497F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BF5BF7124F72E990046F434 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		C76B2FC195FF9D3C321F7F22 /* Pods-eye-detector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eye-detector.release.xcconfig"; path = "Target Support Files/Pods-eye-detector/Pods-eye-detector.release.xcconfig"; sourceTree = "<group>"; };
+		C94B635336D0424487A24DBC /* Pods-eye-detectorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eye-detectorTests.release.xcconfig"; path = "Target Support Files/Pods-eye-detectorTests/Pods-eye-detectorTests.release.xcconfig"; sourceTree = "<group>"; };
+		D552A1642B346F22CA939B6D /* Pods-eye-detector-eye-detectorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eye-detector-eye-detectorUITests.release.xcconfig"; path = "Target Support Files/Pods-eye-detector-eye-detectorUITests/Pods-eye-detector-eye-detectorUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0598F19273ABED67DDE8510 /* Pods_eye_detector.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4E807ED55E3AAEEEBBD50F5 /* Pods_eye_detectorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +88,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52875586801B24F44E40584C /* Pods_eye_detector_eye_detectorUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36A72A2557C5156FDE688B1A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				65E5EA6365BF4D3D7ED6C79F /* Pods-eye-detector.debug.xcconfig */,
+				C76B2FC195FF9D3C321F7F22 /* Pods-eye-detector.release.xcconfig */,
+				29E449205C686C4BE06A69C5 /* Pods-eye-detector-eye-detectorUITests.debug.xcconfig */,
+				D552A1642B346F22CA939B6D /* Pods-eye-detector-eye-detectorUITests.release.xcconfig */,
+				292DFFE4862FEFBDD439EF55 /* Pods-eye-detectorTests.debug.xcconfig */,
+				C94B635336D0424487A24DBC /* Pods-eye-detectorTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8BCCC5D124E49B3A006497F9 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +116,8 @@
 				8BCCC5F624E49B3E006497F9 /* eye-detectorTests */,
 				8BCCC60124E49B3E006497F9 /* eye-detectorUITests */,
 				8BCCC5DB24E49B3A006497F9 /* Products */,
+				36A72A2557C5156FDE688B1A /* Pods */,
+				A4E31DF3A2160697B76C0CFB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +173,16 @@
 			path = "eye-detectorUITests";
 			sourceTree = "<group>";
 		};
+		A4E31DF3A2160697B76C0CFB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13DB6147E4371D22809732FE /* Pods_eye_detector.framework */,
+				6720B215A4E153C71C004E0D /* Pods_eye_detector_eye_detectorUITests.framework */,
+				1C248339C860105A2E7A246E /* Pods_eye_detectorTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,6 +190,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BCCC60724E49B3E006497F9 /* Build configuration list for PBXNativeTarget "eye-detector" */;
 			buildPhases = (
+				50B01F263ECDF7E002052A89 /* [CP] Check Pods Manifest.lock */,
 				8BCCC5D624E49B3A006497F9 /* Sources */,
 				8BCCC5D724E49B3A006497F9 /* Frameworks */,
 				8BCCC5D824E49B3A006497F9 /* Resources */,
@@ -166,6 +208,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BCCC60A24E49B3E006497F9 /* Build configuration list for PBXNativeTarget "eye-detectorTests" */;
 			buildPhases = (
+				54F52E9220243785878B4E72 /* [CP] Check Pods Manifest.lock */,
 				8BCCC5EF24E49B3E006497F9 /* Sources */,
 				8BCCC5F024E49B3E006497F9 /* Frameworks */,
 				8BCCC5F124E49B3E006497F9 /* Resources */,
@@ -184,6 +227,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BCCC60D24E49B3E006497F9 /* Build configuration list for PBXNativeTarget "eye-detectorUITests" */;
 			buildPhases = (
+				96D7BA90C9B7BA45715298D9 /* [CP] Check Pods Manifest.lock */,
 				8BCCC5FA24E49B3E006497F9 /* Sources */,
 				8BCCC5FB24E49B3E006497F9 /* Frameworks */,
 				8BCCC5FC24E49B3E006497F9 /* Resources */,
@@ -267,6 +311,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		50B01F263ECDF7E002052A89 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-eye-detector-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		54F52E9220243785878B4E72 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-eye-detectorTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96D7BA90C9B7BA45715298D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-eye-detector-eye-detectorUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8BCCC5D624E49B3A006497F9 /* Sources */ = {
@@ -440,6 +553,7 @@
 		};
 		8BCCC60824E49B3E006497F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65E5EA6365BF4D3D7ED6C79F /* Pods-eye-detector.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -460,6 +574,7 @@
 		};
 		8BCCC60924E49B3E006497F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C76B2FC195FF9D3C321F7F22 /* Pods-eye-detector.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -480,6 +595,7 @@
 		};
 		8BCCC60B24E49B3E006497F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 292DFFE4862FEFBDD439EF55 /* Pods-eye-detectorTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -501,6 +617,7 @@
 		};
 		8BCCC60C24E49B3E006497F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C94B635336D0424487A24DBC /* Pods-eye-detectorTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -522,6 +639,7 @@
 		};
 		8BCCC60E24E49B3E006497F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29E449205C686C4BE06A69C5 /* Pods-eye-detector-eye-detectorUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -541,6 +659,7 @@
 		};
 		8BCCC60F24E49B3E006497F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D552A1642B346F22CA939B6D /* Pods-eye-detector-eye-detectorUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
