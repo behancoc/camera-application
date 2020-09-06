@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8B0B39E625048B1800E2D483 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B39E525048B1800E2D483 /* ImageCache.swift */; };
+		8B0B39E82504966A00E2D483 /* YOLOv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B39E72504966A00E2D483 /* YOLOv3.mlmodel */; };
 		8B9C8E3825046015008F5435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C8E3725046015008F5435 /* AppDelegate.swift */; };
 		8B9C8E3A25046015008F5435 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C8E3925046015008F5435 /* SceneDelegate.swift */; };
 		8B9C8E3C25046015008F5435 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C8E3B25046015008F5435 /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		8B0B39E525048B1800E2D483 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		8B0B39E72504966A00E2D483 /* YOLOv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = YOLOv3.mlmodel; sourceTree = "<group>"; };
 		8B9C8E3425046015008F5435 /* EyeDetectionApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EyeDetectionApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9C8E3725046015008F5435 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B9C8E3925046015008F5435 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		8B9C8E3625046015008F5435 /* EyeDetectionApplication */ = {
 			isa = PBXGroup;
 			children = (
+				8B0B39E72504966A00E2D483 /* YOLOv3.mlmodel */,
 				8B9C8E3725046015008F5435 /* AppDelegate.swift */,
 				8B9C8E3925046015008F5435 /* SceneDelegate.swift */,
 				8B9C8E3B25046015008F5435 /* ViewController.swift */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B0B39E82504966A00E2D483 /* YOLOv3.mlmodel in Sources */,
 				8B9C8E3C25046015008F5435 /* ViewController.swift in Sources */,
 				8B9C8E3825046015008F5435 /* AppDelegate.swift in Sources */,
 				8B9C8E4225046015008F5435 /* EyeDetectionApplication.xcdatamodeld in Sources */,

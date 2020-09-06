@@ -50,10 +50,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let dataOutput = AVCaptureVideoDataOutput()
         dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoFeedQueue"))
         captureSession.addOutput(dataOutput)
-        
-//        let request = VNCoreMLRequest(model: <#T##VNCoreMLModel#>, completionHandler: <#T##VNRequestCompletionHandler?##VNRequestCompletionHandler?##(VNRequest, Error?) -> Void#>)
-//        VNImageRequestHandler(cgImage: <#T##CGImage#>, options: <#T##[VNImageOption : Any]#>).perform(<#T##requests: [VNRequest]##[VNRequest]#>)
-        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -64,7 +60,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        print("Caught a frame: ", Date())
+//        print("Caught a frame: ", Date())
+        
+        guard let cvPixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {return}
+        
+        guard let model = try? VNCoreMLModel(for: YOLOv3().model) else {return}
+        let request = VNCoreMLRequest(model: model) { (finishedReq, err) in
+            //Handle Error
+            
+            print(finishedReq.results)
+            
+            guard let results = finishedReq.results as? [VNDetectedObjectObservation] else {return}
+            
+            guard let firstDetection = results.first else {return}
+            
+            print(firstDetection.confidence, firstDetection.boundingBox, firstDetection.accessibilityLabel)
+        }
+        
+        try? VNImageRequestHandler(cvPixelBuffer: cvPixelBuffer, options: [:]).perform([request])
     }
     
 
