@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		52875586801B24F44E40584C /* Pods_eye_detector_eye_detectorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6720B215A4E153C71C004E0D /* Pods_eye_detector_eye_detectorUITests.framework */; };
+		8B26C1622504460F00E6DF50 /* ModelHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B26C1612504460F00E6DF50 /* ModelHandler.swift */; };
+		8B9C8DE925045B77008F5435 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C8DE825045B77008F5435 /* UIColorExtension.swift */; };
+		8B9C8DEB25045BEF008F5435 /* CVPixelBufferExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C8DEA25045BEF008F5435 /* CVPixelBufferExtension.swift */; };
 		8BCCC5DE24E49B3A006497F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCCC5DD24E49B3A006497F9 /* AppDelegate.swift */; };
 		8BCCC5E024E49B3A006497F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCCC5DF24E49B3A006497F9 /* SceneDelegate.swift */; };
 		8BCCC5E324E49B3A006497F9 /* eye_detector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BCCC5E124E49B3A006497F9 /* eye_detector.xcdatamodeld */; };
@@ -46,6 +49,9 @@
 		29E449205C686C4BE06A69C5 /* Pods-eye-detector-eye-detectorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eye-detector-eye-detectorUITests.debug.xcconfig"; path = "Target Support Files/Pods-eye-detector-eye-detectorUITests/Pods-eye-detector-eye-detectorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		65E5EA6365BF4D3D7ED6C79F /* Pods-eye-detector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eye-detector.debug.xcconfig"; path = "Target Support Files/Pods-eye-detector/Pods-eye-detector.debug.xcconfig"; sourceTree = "<group>"; };
 		6720B215A4E153C71C004E0D /* Pods_eye_detector_eye_detectorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eye_detector_eye_detectorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B26C1612504460F00E6DF50 /* ModelHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelHandler.swift; sourceTree = "<group>"; };
+		8B9C8DE825045B77008F5435 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		8B9C8DEA25045BEF008F5435 /* CVPixelBufferExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPixelBufferExtension.swift; sourceTree = "<group>"; };
 		8BCCC5DA24E49B3A006497F9 /* eye-detector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eye-detector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BCCC5DD24E49B3A006497F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BCCC5DF24E49B3A006497F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,7 +111,6 @@
 				292DFFE4862FEFBDD439EF55 /* Pods-eye-detectorTests.debug.xcconfig */,
 				C94B635336D0424487A24DBC /* Pods-eye-detectorTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -136,13 +141,16 @@
 			children = (
 				8BCCC5DD24E49B3A006497F9 /* AppDelegate.swift */,
 				8BCCC5DF24E49B3A006497F9 /* SceneDelegate.swift */,
+				8BF5BF7124F72E990046F434 /* ImagePicker.swift */,
 				8BCCC5E424E49B3A006497F9 /* ContentView.swift */,
 				8BCCC5E624E49B3D006497F9 /* Assets.xcassets */,
 				8BCCC5EB24E49B3D006497F9 /* LaunchScreen.storyboard */,
 				8BCCC5EE24E49B3D006497F9 /* Info.plist */,
 				8BCCC5E124E49B3A006497F9 /* eye_detector.xcdatamodeld */,
 				8BCCC5E824E49B3D006497F9 /* Preview Content */,
-				8BF5BF7124F72E990046F434 /* ImagePicker.swift */,
+				8B26C1612504460F00E6DF50 /* ModelHandler.swift */,
+				8B9C8DE825045B77008F5435 /* UIColorExtension.swift */,
+				8B9C8DEA25045BEF008F5435 /* CVPixelBufferExtension.swift */,
 			);
 			path = "eye-detector";
 			sourceTree = "<group>";
@@ -386,6 +394,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B26C1622504460F00E6DF50 /* ModelHandler.swift in Sources */,
+				8B9C8DEB25045BEF008F5435 /* CVPixelBufferExtension.swift in Sources */,
+				8B9C8DE925045B77008F5435 /* UIColorExtension.swift in Sources */,
 				8BCCC5E324E49B3A006497F9 /* eye_detector.xcdatamodeld in Sources */,
 				8BCCC5DE24E49B3A006497F9 /* AppDelegate.swift in Sources */,
 				8BF5BF7224F72E990046F434 /* ImagePicker.swift in Sources */,
