@@ -31,6 +31,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imageView.image = UIImage.placeholder
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        
+        imageView.image = image
+        dismiss(animated: true, completion: nil)
+    }
+    
 
     @IBAction func cameraButtonPressed(_ sender: Any) {
         print("Camera Button Pressed")
