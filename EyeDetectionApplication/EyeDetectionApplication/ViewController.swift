@@ -15,12 +15,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var detectEyesButton: UIButton!
     
-    
+    private var inputImage: UIImage?
+    private var classification: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        imageView.layer.cornerRadius = 10.0
+        detectEyesButton.layer.cornerRadius = 10.0
+        
+        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage.placeholder
     }
+    
 
     @IBAction func cameraButtonPressed(_ sender: Any) {
         print("Camera Button Pressed")
@@ -34,5 +43,9 @@ class ViewController: UIViewController {
         print("Detect Eyes Button Pressed")
     }
     
+}
+
+extension UIImage {
+    static let placeholder = UIImage(named: "placeholder.png")!
 }
 
