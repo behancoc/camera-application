@@ -9,7 +9,7 @@
 import UIKit
 import MobileCoreServices
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var searchButton: UIBarButtonItem!
@@ -89,38 +89,3 @@ extension UIBarButtonItem {
         self.isEnabled = false
     }
 }
-
-extension ViewController: UINavigationControllerDelegate, UIPickerViewDelegate, UIImagePickerControllerDelegate {
-    private func getImage(cameraSource: Bool = false) {
-        let photoSource: UIImagePickerController.SourceType
-        photoSource = cameraSource ? .camera: .photoLibrary
-        
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = photoSource
-        
-        imagePicker.mediaTypes = []
-        imagePicker.mediaTypes = [kUTTypeImage as String]
-        present(imagePicker, animated: true)
-    }
-    
-    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        inputImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-        classification = nil
-        
-        picker.dismiss(animated: true)
-        //refresh()
-        
-        if inputImage == nil {
-            bringUpAlertView(message: "Image was malformed.")
-        }
-    }
-    
-    func bringUpAlertView(message: String? = nil) {
-        let alertController = UIAlertController(title: "Error", message: "Action can not be completed", preferredStyle: .alert)
-        
-        alertController.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alertController, animated: true)
-    }
-}
-
