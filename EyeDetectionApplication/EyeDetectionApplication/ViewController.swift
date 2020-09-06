@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         imageView.layer.cornerRadius = 10.0
         detectEyesButton.layer.cornerRadius = 10.0
         
-        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum)
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage.placeholder
     }
@@ -34,6 +34,22 @@ class ViewController: UIViewController {
 
     @IBAction func cameraButtonPressed(_ sender: Any) {
         print("Camera Button Pressed")
+    
+        
+        let imagePicker = UIImagePickerController()
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            imagePicker.sourceType = .camera
+            imagePicker.cameraDevice = .front
+            
+        } else {
+            imagePicker.sourceType = .photoLibrary
+        }
+        
+        imagePicker.delegate = self
+        
+        present(imagePicker, animated: true, completion: nil)
+        
     }
     
     @IBAction func searchButtonPressed(_ sender: Any) {
@@ -50,6 +66,28 @@ class ViewController: UIViewController {
 
 extension UIImage {
     static let placeholder = UIImage(named: "placeholder.png")!
+}
+
+extension UIButton {
+    func enable() {
+        self.isEnabled = true
+        self.backgroundColor = UIColor.systemBlue
+    }
+    
+    func disable() {
+        self.isEnabled = false
+        self.backgroundColor = UIColor.lightGray
+    }
+}
+
+extension UIBarButtonItem {
+    func enable() {
+        self.isEnabled = true
+    }
+    
+    func disable() {
+        self.isEnabled = false
+    }
 }
 
 extension ViewController: UINavigationControllerDelegate, UIPickerViewDelegate, UIImagePickerControllerDelegate {
