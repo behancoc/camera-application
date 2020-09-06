@@ -34,22 +34,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imageView.image = UIImage.placeholder
         
         
-        let captureSession = AVCaptureSession()
-        captureSession.sessionPreset = .photo
-        
-        guard let captureDevice = AVCaptureDevice.default(for: .video) else {return}
-        guard let input = try? AVCaptureDeviceInput(device: captureDevice) else {return}
-        captureSession.addInput(input)
-        
-        captureSession.startRunning()
-        
-        let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        view.layer.addSublayer(previewLayer)
-        previewLayer.frame = view.frame
-        
-        let dataOutput = AVCaptureVideoDataOutput()
-        dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoFeedQueue"))
-        captureSession.addOutput(dataOutput)
+        /*Video capture on the preview Layer*/
+//        let captureSession = AVCaptureSession()
+//        captureSession.sessionPreset = .photo
+//
+//        guard let captureDevice = AVCaptureDevice.default(for: .video) else {return}
+//        guard let input = try? AVCaptureDeviceInput(device: captureDevice) else {return}
+//        captureSession.addInput(input)
+//
+//        captureSession.startRunning()
+//
+//        let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+//        view.layer.addSublayer(previewLayer)
+//        previewLayer.frame = view.frame
+//
+//        let dataOutput = AVCaptureVideoDataOutput()
+//        dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoFeedQueue"))
+//        captureSession.addOutput(dataOutput)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -59,26 +60,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         dismiss(animated: true, completion: nil)
     }
     
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-//        print("Caught a frame: ", Date())
-        
-        guard let cvPixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {return}
-        
-        guard let model = try? VNCoreMLModel(for: YOLOv3().model) else {return}
-        let request = VNCoreMLRequest(model: model) { (finishedReq, err) in
-            //Handle Error
-            
-            print(finishedReq.results)
-            
-            guard let results = finishedReq.results as? [VNDetectedObjectObservation] else {return}
-            
-            guard let firstDetection = results.first else {return}
-            
-            print(firstDetection.confidence, firstDetection.boundingBox, firstDetection.accessibilityLabel)
-        }
-        
-        try? VNImageRequestHandler(cvPixelBuffer: cvPixelBuffer, options: [:]).perform([request])
-    }
+//    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+////        print("Caught a frame: ", Date())
+//
+//        guard let cvPixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {return}
+//
+//        guard let model = try? VNCoreMLModel(for: YOLOv3().model) else {return}
+//        let request = VNCoreMLRequest(model: model) { (finishedReq, err) in
+//            //Handle Error
+//
+//            print(finishedReq.results)
+//
+//            guard let results = finishedReq.results as? [VNDetectedObjectObservation] else {return}
+//
+//            guard let firstDetection = results.first else {return}
+//
+//            print(firstDetection.confidence, firstDetection.boundingBox, firstDetection.accessibilityLabel)
+//        }
+//
+//        try? VNImageRequestHandler(cvPixelBuffer: cvPixelBuffer, options: [:]).perform([request])
+//    }
     
 
     @IBAction func cameraButtonPressed(_ sender: Any) {

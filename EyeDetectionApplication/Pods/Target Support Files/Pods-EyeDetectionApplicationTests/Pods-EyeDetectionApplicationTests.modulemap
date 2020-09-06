@@ -1,0 +1,6 @@
+framework module Pods_EyeDetectionApplicationTests {
+  umbrella header "Pods-EyeDetectionApplicationTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
