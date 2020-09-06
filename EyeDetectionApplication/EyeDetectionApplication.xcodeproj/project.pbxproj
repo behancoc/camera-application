@@ -19,6 +19,12 @@
 		8B9C8E4725046016008F5435 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B9C8E4525046016008F5435 /* LaunchScreen.storyboard */; };
 		8B9C8E5225046016008F5435 /* EyeDetectionApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C8E5125046016008F5435 /* EyeDetectionApplicationTests.swift */; };
 		8B9C8E5D25046016008F5435 /* EyeDetectionApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C8E5C25046016008F5435 /* EyeDetectionApplicationUITests.swift */; };
+		8BB1935625057CA6001DA753 /* ModelDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB1935525057CA6001DA753 /* ModelDataHandler.swift */; };
+		8BB1935825057F32001DA753 /* CVPixelBufferExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB1935725057F32001DA753 /* CVPixelBufferExtension.swift */; };
+		8BB1935A25057F5A001DA753 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB1935925057F5A001DA753 /* UIColorExtension.swift */; };
+		8BB1935D2505808E001DA753 /* labelmap.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8BB1935C2505808E001DA753 /* labelmap.txt */; };
+		8BB1936225058D0A001DA753 /* tflite_model.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 8BB1936125058D0A001DA753 /* tflite_model.tflite */; };
+		8BB1936425058DDF001DA753 /* detect.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 8BB1936325058DDF001DA753 /* detect.tflite */; };
 		AF0F16D720D43E562EDAF88E /* Pods_EyeDetectionApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0BE3D31423F23E6795E54A /* Pods_EyeDetectionApplication.framework */; };
 		AF67EC86D254838E5089F5BF /* Pods_EyeDetectionApplicationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F034128A1E7436C7E7C214 /* Pods_EyeDetectionApplicationTests.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +70,12 @@
 		8B9C8E5825046016008F5435 /* EyeDetectionApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EyeDetectionApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9C8E5C25046016008F5435 /* EyeDetectionApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeDetectionApplicationUITests.swift; sourceTree = "<group>"; };
 		8B9C8E5E25046016008F5435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BB1935525057CA6001DA753 /* ModelDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDataHandler.swift; sourceTree = "<group>"; };
+		8BB1935725057F32001DA753 /* CVPixelBufferExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVPixelBufferExtension.swift; sourceTree = "<group>"; };
+		8BB1935925057F5A001DA753 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		8BB1935C2505808E001DA753 /* labelmap.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = labelmap.txt; sourceTree = "<group>"; };
+		8BB1936125058D0A001DA753 /* tflite_model.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = tflite_model.tflite; sourceTree = "<group>"; };
+		8BB1936325058DDF001DA753 /* detect.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = detect.tflite; sourceTree = "<group>"; };
 		A854EACE4332B96EE788F7BA /* Pods-EyeDetectionApplicationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyeDetectionApplicationTests.release.xcconfig"; path = "Target Support Files/Pods-EyeDetectionApplicationTests/Pods-EyeDetectionApplicationTests.release.xcconfig"; sourceTree = "<group>"; };
 		EB0BE3D31423F23E6795E54A /* Pods_EyeDetectionApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EyeDetectionApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFE28B930544D9FEC9ABBEC2 /* Pods-EyeDetectionApplicationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyeDetectionApplicationTests.debug.xcconfig"; path = "Target Support Files/Pods-EyeDetectionApplicationTests/Pods-EyeDetectionApplicationTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,7 +119,6 @@
 				EFE28B930544D9FEC9ABBEC2 /* Pods-EyeDetectionApplicationTests.debug.xcconfig */,
 				A854EACE4332B96EE788F7BA /* Pods-EyeDetectionApplicationTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -136,6 +147,7 @@
 		8B9C8E3625046015008F5435 /* EyeDetectionApplication */ = {
 			isa = PBXGroup;
 			children = (
+				8BB193522504A7AB001DA753 /* Model */,
 				8B0B39E72504966A00E2D483 /* YOLOv3.mlmodel */,
 				8B9C8E3725046015008F5435 /* AppDelegate.swift */,
 				8B9C8E3925046015008F5435 /* SceneDelegate.swift */,
@@ -145,7 +157,10 @@
 				8B9C8E4525046016008F5435 /* LaunchScreen.storyboard */,
 				8B9C8E4825046016008F5435 /* Info.plist */,
 				8B9C8E4025046015008F5435 /* EyeDetectionApplication.xcdatamodeld */,
+				8BB1935725057F32001DA753 /* CVPixelBufferExtension.swift */,
+				8BB1935925057F5A001DA753 /* UIColorExtension.swift */,
 				8B0B39E525048B1800E2D483 /* ImageCache.swift */,
+				8BB1935525057CA6001DA753 /* ModelDataHandler.swift */,
 			);
 			path = EyeDetectionApplication;
 			sourceTree = "<group>";
@@ -166,6 +181,16 @@
 				8B9C8E5E25046016008F5435 /* Info.plist */,
 			);
 			path = EyeDetectionApplicationUITests;
+			sourceTree = "<group>";
+		};
+		8BB193522504A7AB001DA753 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8BB1936125058D0A001DA753 /* tflite_model.tflite */,
+				8BB1936325058DDF001DA753 /* detect.tflite */,
+				8BB1935C2505808E001DA753 /* labelmap.txt */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E25899AEFC8688B90104F233 /* Frameworks */ = {
@@ -285,9 +310,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BB1936425058DDF001DA753 /* detect.tflite in Resources */,
 				8B9C8E4725046016008F5435 /* LaunchScreen.storyboard in Resources */,
+				8BB1936225058D0A001DA753 /* tflite_model.tflite in Resources */,
 				8B9C8E4425046016008F5435 /* Assets.xcassets in Resources */,
 				8B9C8E3F25046015008F5435 /* Main.storyboard in Resources */,
+				8BB1935D2505808E001DA753 /* labelmap.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,8 +410,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B0B39E82504966A00E2D483 /* YOLOv3.mlmodel in Sources */,
+				8BB1935825057F32001DA753 /* CVPixelBufferExtension.swift in Sources */,
 				8B9C8E3C25046015008F5435 /* ViewController.swift in Sources */,
 				8B9C8E3825046015008F5435 /* AppDelegate.swift in Sources */,
+				8BB1935625057CA6001DA753 /* ModelDataHandler.swift in Sources */,
+				8BB1935A25057F5A001DA753 /* UIColorExtension.swift in Sources */,
 				8B9C8E4225046015008F5435 /* EyeDetectionApplication.xcdatamodeld in Sources */,
 				8B0B39E625048B1800E2D483 /* ImageCache.swift in Sources */,
 				8B9C8E3A25046015008F5435 /* SceneDelegate.swift in Sources */,

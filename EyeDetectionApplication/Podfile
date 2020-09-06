@@ -6,7 +6,7 @@ target 'EyeDetectionApplication' do
   use_frameworks!
 
   # Pods for EyeDetectionApplication
-  pod 'TensorFlowLiteSwift'
+  pod 'TensorFlowLiteSwift', '~> 0.0.1-nightly'
 
   target 'EyeDetectionApplicationTests' do
     inherit! :search_paths

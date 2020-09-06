@@ -19,6 +19,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     private var inputImage: UIImage?
     private var classification: String?
+    private var modelDataHandler: ModelDataHandler? = ModelDataHandler(modelFileInfo: MobileNetSSD.modelInfo, labelsFileInfo: MobileNetSSD.labelsInfo)
+    private var previousInferenceTimeInMilliseconds: TimeInterval = Date.distantPast.timeIntervalSince1970 * 1000
+    private let delayBetweenInferenceInMilliseconds: Double = 200
+    private var result: Result?
+    
+    var inferenceTime: Double = 0
+    var wantedInputWidth: Int = 0
+    var wantedInputHeight: Int = 0
+    var resolution: CGSize = CGSize.zero
+    var threadCountLimit: Int = 0
+    var currentThreadCount: Int = 0
     
     var imageStore: ImageCache!
     
@@ -33,24 +44,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage.placeholder
         
+        guard modelDataHandler != nil else {
+          fatalError("Failed to load model")
+        }
+        
         
         /*Video capture on the preview Layer*/
-//        let captureSession = AVCaptureSession()
-//        captureSession.sessionPreset = .photo
-//
-//        guard let captureDevice = AVCaptureDevice.default(for: .video) else {return}
-//        guard let input = try? AVCaptureDeviceInput(device: captureDevice) else {return}
-//        captureSession.addInput(input)
-//
-//        captureSession.startRunning()
-//
-//        let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-//        view.layer.addSublayer(previewLayer)
-//        previewLayer.frame = view.frame
-//
-//        let dataOutput = AVCaptureVideoDataOutput()
-//        dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoFeedQueue"))
-//        captureSession.addOutput(dataOutput)
+        let captureSession = AVCaptureSession()
+        captureSession.sessionPreset = .photo
+
+        guard let captureDevice = AVCaptureDevice.default(for: .video) else {return}
+        guard let input = try? AVCaptureDeviceInput(device: captureDevice) else {return}
+        captureSession.addInput(input)
+
+        captureSession.startRunning()
+
+        let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        view.layer.addSublayer(previewLayer)
+        previewLayer.frame = view.frame
+
+        let dataOutput = AVCaptureVideoDataOutput()
+        dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoFeedQueue"))
+        captureSession.addOutput(dataOutput)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -60,11 +75,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         dismiss(animated: true, completion: nil)
     }
     
-//    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-////        print("Caught a frame: ", Date())
-//
-//        guard let cvPixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {return}
-//
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+//        print("Caught a frame: ", Date())
+
+        guard let cvPixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {return}
+        
+        
+        
+//        runModel(onPixelBuffer: cvPixelBuffer)
+
 //        guard let model = try? VNCoreMLModel(for: YOLOv3().model) else {return}
 //        let request = VNCoreMLRequest(model: model) { (finishedReq, err) in
 //            //Handle Error
@@ -79,7 +98,31 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 //        }
 //
 //        try? VNImageRequestHandler(cvPixelBuffer: cvPixelBuffer, options: [:]).perform([request])
-//    }
+    }
+    
+    @objc func runModel(onPixelBuffer pixelBuffer: CVPixelBuffer) {
+        let currentTimeInMilliseconds = Date().timeIntervalSince1970 * 1000
+        
+        guard (currentTimeInMilliseconds - previousInferenceTimeInMilliseconds) >= delayBetweenInferenceInMilliseconds else {return}
+        
+        previousInferenceTimeInMilliseconds = currentTimeInMilliseconds
+        result = self.modelDataHandler?.runModel(onFrame: pixelBuffer)
+        
+        guard let displayResult = result else {return}
+        
+        let width = CVPixelBufferGetWidth(pixelBuffer)
+        let height = CVPixelBufferGetHeight(pixelBuffer)
+        
+        DispatchQueue.main.async {
+            self.resolution = CGSize(width: width, height: height)
+            
+            var inferenceTime: Double = 0
+            if let resultInferenceTime = self.result?.inferenceTime {
+              inferenceTime = resultInferenceTime
+            }
+            
+        }
+    }
     
 
     @IBAction func cameraButtonPressed(_ sender: Any) {
