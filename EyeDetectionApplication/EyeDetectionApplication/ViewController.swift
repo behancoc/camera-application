@@ -8,8 +8,9 @@
 
 import UIKit
 import AVKit
+import Vision
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
 
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var searchButton: UIBarButtonItem!
@@ -33,6 +34,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imageView.image = UIImage.placeholder
         
         
+        let captureSession = AVCaptureSession()
+        captureSession.sessionPreset = .photo
+        
+        guard let captureDevice = AVCaptureDevice.default(for: .video) else {return}
+        guard let input = try? AVCaptureDeviceInput(device: captureDevice) else {return}
+        captureSession.addInput(input)
+        
+        captureSession.startRunning()
+        
+        let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        view.layer.addSublayer(previewLayer)
+        previewLayer.frame = view.frame
+        
+        let dataOutput = AVCaptureVideoDataOutput()
+        dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoFeedQueue"))
+        captureSession.addOutput(dataOutput)
+        
+//        let request = VNCoreMLRequest(model: <#T##VNCoreMLModel#>, completionHandler: <#T##VNRequestCompletionHandler?##VNRequestCompletionHandler?##(VNRequest, Error?) -> Void#>)
+//        VNImageRequestHandler(cgImage: <#T##CGImage#>, options: <#T##[VNImageOption : Any]#>).perform(<#T##requests: [VNRequest]##[VNRequest]#>)
         
     }
     
@@ -41,6 +61,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         imageView.image = image
         dismiss(animated: true, completion: nil)
+    }
+    
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        print("Caught a frame: ", Date())
     }
     
 
