@@ -13,6 +13,7 @@ This application is part of a Final Term project deliverable for CIS:663 Biometr
 - Python 3.7  
 - Tensorflow 2.0
 - Anaconda or Google Collab
+- https://cocoapods.org/
 
 ## Xcode Setup
 
@@ -22,9 +23,12 @@ The project uses CocoaPods to import the required TensorFlow Lite libraries for 
   - The output of running this command within terminal should produce the following file: 
   ![xcworkspace](/Images/xcworkspace.?raw=true "xcworkspace")
   - Run the command **open .** from the current terminal window.  This will open a finder window.
-  - Navigate to `EyeDetectionApplication.xcworkspace` and double click to launch
+  - Navigate to `EyeDetectionApplication.xcworkspace` and double click to launch Xcode + application
   - Connect iPhone to MacBook
-  -
+  - Select the EyeDetectionApplication project in the left hand navigation to open the project configuration. In the Signing section of the General tab, select your development team from the dropdown.(per Google's Docuemntation & Examples)
+  -In order to build the project, you must modify the Bundle Identifier in the Identity section so that it is unique across all Xcode projects. To create a unique identifier, try adding your initials and a number to the end of the string (per Google's Docuemntation & Examples).
+  -  Build and run the app in Xcode
+  
 
 ## References
 - https://www.tensorflow.org/lite/guide/inference
