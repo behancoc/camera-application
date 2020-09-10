@@ -7,6 +7,7 @@ target 'EyeDetectionApplication' do
 
   # Pods for EyeDetectionApplication
   pod 'TensorFlowLiteSwift', '~> 0.0.1-nightly'
+  pod 'TensorFlowLiteSelectTfOps', '~> 0.0.1-nightly'
 
   target 'EyeDetectionApplicationTests' do
     inherit! :search_paths
