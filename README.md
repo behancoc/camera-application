@@ -32,3 +32,7 @@ The project uses CocoaPods to import the required TensorFlow Lite libraries for 
 - https://www.tensorflow.org/lite/guide/ops_select
 - https://www.tensorflow.org/lite/guide/ios
 - https://github.com/tensorflow/examples/tree/master/lite/examples/image_classification/ios
+
+
+## NOTE TO PROFESSOR
+ - *For this project, we decided to leverge Google's image classification example in order to save time.  As such we leveraged Google's ModelDataHandler class in addtion to their CVPixelBufferExtension and UIColorExtenstion.  Our progess on the project would not have been possible without Google's extension documenation and open source examples*
