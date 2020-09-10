@@ -2,7 +2,7 @@
 
 
 ## Overview
-This application is part of a Final Term project deliverable for CIS:663 Biometrics.  The application is designed to detect irises in within an image.  It leverages TensorFlowLite to run inference on device.
+This application is part of a Final Term project deliverable for CIS:663 Biometrics.  The application is designed to detect irises in within an image.  It uses TensorFlowLite to run inference on device.
 
 
 ## Requirements
